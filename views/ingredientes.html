@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+   <body>
+      <h3>
+         <a href = "{{ url_for('ingredientes') }}">Comments - Ingredientes Heladeria</a>
+      </h3>
+
+      <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+
+      <table>
+         <thead>
+            <tr>
+               <th>nombre</th>
+               <th>precio</th>
+               <th>calorias</th>
+               <th>vegetariano</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for ingrediente in ingredientes %}
+               <tr>
+                  <td>{{ ingrediente.nombre }}</td>
+                  <td>{{ ingrediente.precio }}</td>
+                  <td>{{ ingrediente.calorias }}</td>
+                  <td>{{ ingrediente.vegetariano }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </body>
+</html>
