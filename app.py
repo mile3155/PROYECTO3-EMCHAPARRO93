@@ -12,8 +12,8 @@ import mysql.connector
 app = Flask(__name__, template_folder="views")
 
 # Conexion a la base de datos
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root:@localhost:3306/' + os.path.join('usuarios_db.db')
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root:@localhost:3306/' + os.path.join('usuarios_db.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root:@localhost:3306/' + os.path.join('usuarios_db.db')
+# SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root:@localhost:3306/' + os.path.join('usuarios_db.db')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 secret_key = os.urandom(24)
 app.config["SECRET_KEY"] = secret_key
