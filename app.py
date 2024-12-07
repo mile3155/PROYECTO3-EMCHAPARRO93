@@ -70,7 +70,7 @@ def login():
 
         for usuario in usuarios_bd:
             if usuario.nombre_usuario == nombre_usuario and usuario.clave == clave:
-                login_user()
+                login_user(Usuario.self)
                 flash('Inicio de sesión correcto', 'success')
                 if usuario.administrador:
                     return redirect(url_for('administrador'))
